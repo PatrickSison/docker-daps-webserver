@@ -23,6 +23,10 @@ RUN apt-get update -q \
     apt-utils \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    
+RUN sudo apt-get install -yq nodejs \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN pip3 install django
 RUN npm install --global react-scripts
