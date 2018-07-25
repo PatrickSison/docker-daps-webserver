@@ -5,10 +5,10 @@ if [ "$TESTING_ENV" = "development" ]
 then
     echo "development"
     cd /app/api
-    pip install -r requirements.txt
-    pip uninstall --yes celery
+    pip3 install -r requirements.txt
+    pip3 uninstall --yes celery
     cd celery-master/
-    python setup.py install 
+    python3 setup.py install 
     cd ..
     python3 manage.py makemigrations
     python3 manage.py migrate
@@ -16,10 +16,10 @@ then
 else
     echo $TESTING_ENV
     cd /app/api
-    pip install -r requirements.txt
-    pip uninstall --yes celery
+    pip3 install -r requirements.txt
+    pip3 uninstall --yes celery
     cd celery-master/
-    python setup.py install 
+    python3 setup.py install 
     cd ..
     python3 manage.py makemigrations
     python3 manage.py migrate
